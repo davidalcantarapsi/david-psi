@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Página inicial",
+    "about": "Sobre",
+    "therapy": "Terapia",
+    "faq": "Perguntas frequentes",
+    "blog": "Blog"
+  },
+  "home": {
+    "welcome": "Bem-vindo",
+    "headline": "Fico contente pela sua decisão de procurar psicoterapia e investir em si mesmo(a). Essa decisão não é fácil mas é o primeiro passo para construir um jeito mais leve de viver!",
+    "cta": "Vamos lá?",
+    "aboutTitle": "Sobre mim",
+    "aboutExperience": "Psicólogo formado na UFES, mestrando. Experiência e treinamentos em uma das maiores clínicas online do Brasil. Experiência com brasileiros no exterior, depressão, ansiedade, TDAH, TOC, dependência química, vício em apostas, problemas conjugais.",
+    "aboutCta": "Saber mais sobre minha formação",
+    "therapyTitle": "Terapia",
+    "therapyForWho": "Para quem?",
+    "therapyPrinciples": "Princípios: transparência, ciência, atendimento individualizado, foco em resultados.",
+    "therapyCta": "Como funciona a terapia",
+    "blogTitle": "Blog",
+    "blogIntro": "Conteúdo sobre psicologia e saúde mental. Visite a página de blog para artigos e reflexões.",
+    "blogCta": "Ver todos os artigos"
+  },
+  "therapy": {
+    "title": "Terapia",
+    "description": "Entenda como funciona o processo terapêutico, do primeiro contato até a alta.",
+    "howItWorks": "Como funciona?",
+    "step1": "Avaliação",
+    "step1Desc": "Primeira etapa para compreender sua história, demandas e objetivos.",
+    "step2": "Definição de objetivos",
+    "step2Desc": "Juntos definimos os objetivos do tratamento de forma clara e mensurável.",
+    "step3": "Tratamento",
+    "step3Desc": "Sessões estruturadas com técnicas baseadas em evidências científicas.",
+    "step4": "Monitoramento",
+    "step4Desc": "Acompanhamento do progresso e ajustes quando necessário.",
+    "step5": "Alta",
+    "step5Desc": "Quando os objetivos são alcançados, planejamos o encerramento do processo."
+  },
+  "about": {
+    "title": "Sobre",
+    "description": "Conheça minha trajetória, experiência e princípios de atendimento.",
+    "psychologist": "Psicólogo",
+    "formation": "Formado na UFES, mestrando.",
+    "experience": "Experiência e treinamentos em uma das maiores clínicas online do Brasil. Experiência com brasileiros no exterior, depressão, ansiedade, TDAH, TOC, dependência química, vício em apostas, problemas conjugais.",
+    "principlesTitle": "Princípios",
+    "principle1": "Transparência",
+    "principle2": "Ciência",
+    "principle3": "Atendimento individualizado",
+    "principle4": "Foco em resultados"
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "description": "Respostas para dúvidas comuns sobre psicoterapia e meu atendimento.",
+    "q1": "Como posso agendar minha primeira consulta?",
+    "a1": "Entre em contato por e-mail ou WhatsApp. Farei o possível para agendar em um horário conveniente.",
+    "q2": "Qual é a duração de uma sessão?",
+    "a2": "As sessões têm duração de 50 minutos.",
+    "q3": "Como é mantida a confidencialidade?",
+    "a3": "Seu sigilo é garantido por lei. As informações só são compartilhadas com sua autorização ou em casos de risco iminente.",
+    "q4": "Quantas sessões serão necessárias?",
+    "a4": "O número varia de acordo com seus objetivos. Revisamos o plano com frequência.",
+    "q5": "Oferecem atendimento online?",
+    "a5": "Sim, realizo atendimentos online."
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Artigos e reflexões sobre psicologia, bem-estar mental e desenvolvimento pessoal.",
+    "readMore": "Ler mais",
+    "backToBlog": "Voltar ao blog",
+    "alsoRead": "Leia também"
+  },
+  "footer": {
+    "nav": "Navegação",
+    "resources": "Recursos",
+    "contact": "Contato",
+    "rights": "Todos os direitos reservados."
+  },
+  "contact": {
+    "title": "Pronto para começar?",
+    "description": "Entre em contato para agendar sua primeira sessão. Estarei feliz em ajudar na sua jornada de autoconhecimento e bem-estar.",
+    "email": "Enviar e-mail",
+    "whatsapp": "Mandar mensagem",
+    "blogTitle": "Quer discutir algum tema?",
+    "blogDescription": "Entre em contato para sugerir tópicos de artigos ou agendar uma consulta."
+  },
+  "breadcrumbs": {
+    "home": "Home"
+  }
+}
