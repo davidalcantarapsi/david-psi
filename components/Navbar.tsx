@@ -17,6 +17,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [locale, setLocale] = useState<"pt" | "en">("pt");
 
   const isActive = (path: string) => {
     if (path === "/") return pathname === "/";
@@ -25,7 +26,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b-2 border-primary bg-background shadow-sm">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo-verde.svg"
@@ -38,7 +39,8 @@ export default function Navbar() {
           <span className="sr-only">David</span>
         </Link>
 
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="flex items-center gap-2 md:gap-6">
+          <div className="hidden items-center gap-6 md:flex">
           {NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
@@ -52,16 +54,45 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-        </div>
+          </div>
+          <div
+            className="flex rounded-lg border-2 border-primary/30 bg-white p-0.5"
+            role="group"
+            aria-label="Selecionar idioma"
+          >
+            <button
+              type="button"
+              onClick={() => setLocale("pt")}
+              className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
+                locale === "pt"
+                  ? "bg-primary-500 text-white"
+                  : "text-neutral-600 hover:bg-primary-50 hover:text-primary-600"
+              }`}
+            >
+              PT
+            </button>
+            <button
+              type="button"
+              onClick={() => setLocale("en")}
+              className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
+                locale === "en"
+                  ? "bg-primary-500 text-white"
+                  : "text-neutral-600 hover:bg-primary-50 hover:text-primary-600"
+              }`}
+            >
+              EN
+            </button>
+          </div>
 
-        <button
-          type="button"
-          className="p-2 text-neutral-700 hover:text-primary-500 md:hidden"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <button
+            type="button"
+            className="p-2 text-neutral-700 hover:text-primary-500 md:hidden"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label="Menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {isOpen && (

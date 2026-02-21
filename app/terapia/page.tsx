@@ -27,19 +27,19 @@ export default async function TerapiaPage() {
         ]}
       />
 
-      <section className="relative overflow-hidden border-t-2 border-accent/40 py-16 md:py-24">
-        <div className="absolute left-0 top-1/2 h-[360px] w-[360px] -translate-y-1/2 opacity-[0.05]" aria-hidden>
+      <section className="relative overflow-hidden border-t-2 border-accent/40 py-14 md:py-20">
+        <div className="absolute left-0 top-1/2 z-0 h-[520px] w-[520px] -translate-y-1/2 opacity-[0.06]" aria-hidden>
           <img src="/logo-amarelo.svg" alt="" className="h-full w-full object-contain" />
         </div>
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-center text-3xl font-bold text-foreground">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-16 text-center text-3xl font-bold text-foreground">
             {t("howItWorks")}
           </h2>
-          <div className="space-y-8">
+          <div className="space-y-10">
             {STEPS.map(({ key, descKey }, index) => (
               <div
                 key={key}
-                className={`flex gap-6 rounded-xl border-2 bg-white p-6 shadow-sm transition-shadow hover:shadow-md ${index % 2 === 0 ? "border-primary/30 border-l-4 border-l-primary" : "border-accent/30 border-l-4 border-l-accent"}`}
+                className="flex gap-6 rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-100 text-primary-500">
                   <span className="text-lg font-bold">{index + 1}</span>
@@ -57,7 +57,7 @@ export default async function TerapiaPage() {
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <Link
               href="#contato"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-accent bg-primary-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-primary-600"

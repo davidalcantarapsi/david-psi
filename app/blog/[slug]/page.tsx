@@ -73,7 +73,7 @@ export default async function BlogArticlePage({ params }: Props) {
         ]}
       />
 
-      <article className="border-t-2 border-primary/30 py-12 md:py-16">
+      <article className="border-t-2 border-primary/30 py-8 md:py-10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 overflow-hidden rounded-2xl border-2 border-primary/30 border-t-4 border-t-accent shadow-lg">
             <div className="relative aspect-video w-full">
@@ -129,7 +129,7 @@ export default async function BlogArticlePage({ params }: Props) {
       </article>
 
       {otherPosts.length > 0 && (
-        <section className="border-t-2 border-accent/40 bg-secondary-100/30 py-12 md:py-16">
+        <section className="border-t-2 border-accent/40 bg-secondary-100/30 py-8 md:py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="mb-8 text-2xl font-bold text-foreground">
               {t("alsoRead")}

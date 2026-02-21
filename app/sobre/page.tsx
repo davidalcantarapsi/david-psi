@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
+import BackgroundPsi from "@/components/BackgroundPsi";
 import { getMessages, getT } from "@/lib/server-i18n";
 import { Award, BookOpen } from "lucide-react";
 
@@ -20,19 +21,20 @@ export default async function SobrePage() {
       <PageHero
         title={t("title")}
         description={t("description")}
+        backgroundElement="psi"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: t("title"), href: "/sobre" },
         ]}
       />
 
-      <section className="relative overflow-hidden border-t-2 border-primary/30 py-12 md:py-16">
-        <div className="absolute bottom-0 right-0 h-[380px] w-[380px] opacity-[0.05]" aria-hidden>
-          <img src="/logo-verde.svg" alt="" className="h-full w-full object-contain" />
+      <section className="relative overflow-hidden border-t-2 border-primary/30 py-14 md:py-20">
+        <div className="absolute bottom-0 right-0 z-0" aria-hidden>
+          <BackgroundPsi size={520} variant="primary" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-5">
-            <div className="overflow-hidden rounded-2xl border-2 border-primary/30 border-l-4 border-l-accent bg-primary-50 md:col-span-2">
+          <div className="mb-20 grid grid-cols-1 gap-14 md:grid-cols-5 md:gap-16">
+            <div className="overflow-hidden rounded-2xl bg-primary-50 md:col-span-2">
               <div className="relative h-[400px] w-full md:h-[600px]">
                 <Image
                   src="/foto-2.jpg"
@@ -56,18 +58,18 @@ export default async function SobrePage() {
             </div>
           </div>
 
-          <div className="mb-16 rounded-xl border-2 border-primary/30 border-t-4 border-t-accent bg-primary-50 p-8">
-            <div className="mb-6 flex items-center gap-3">
+          <div className="mb-20 rounded-xl bg-primary-50 p-10">
+            <div className="mb-8 flex items-center gap-3">
               <BookOpen className="h-8 w-8 text-primary-500" />
               <h3 className="text-2xl font-bold text-foreground">
                 {t("principlesTitle")}
               </h3>
             </div>
-            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {PRINCIPLES.map((key, i) => (
+            <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {PRINCIPLES.map((key) => (
                 <li
                   key={key}
-                  className={`flex items-center gap-3 rounded-lg border-2 bg-white p-4 ${i % 2 === 0 ? "border-primary/20" : "border-accent/30"}`}
+                  className="flex items-center gap-3 rounded-lg bg-white p-4"
                 >
                   <Award className="h-6 w-6 shrink-0 text-primary-500" />
                   <span className="font-medium text-foreground">{t(key)}</span>

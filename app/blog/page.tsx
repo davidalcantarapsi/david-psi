@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
+import BackgroundPsi from "@/components/BackgroundPsi";
 import { getMessages, getT } from "@/lib/server-i18n";
 import { posts } from "./posts";
 
@@ -15,19 +16,23 @@ export default async function BlogPage() {
       <PageHero
         title={t("title")}
         description={t("description")}
+        backgroundElement="psi"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: t("title"), href: "/blog" },
         ]}
       />
 
-      <section className="border-t-2 border-primary/30 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden border-t-2 border-primary/30 py-10 md:py-12">
+        <div className="absolute -left-16 top-1/2 z-0 -translate-y-1/2" aria-hidden>
+          <BackgroundPsi size={560} variant="primary" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post, i) => (
               <article
                 key={post.slug}
-                className={`flex flex-col overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-shadow hover:shadow-md ${i % 2 === 0 ? "border-primary/30 border-l-4 border-l-primary" : "border-accent/30 border-l-4 border-l-accent"}`}
+                className="flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md"
               >
                 <Link href={`/blog/${post.slug}`} className="block">
                   <div className="relative h-48 w-full">

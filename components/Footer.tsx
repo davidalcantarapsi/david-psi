@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import PsiSymbol from "./PsiSymbol";
 
 const CONTACT_EMAIL = "contato@david-psicologo.com";
 const CONTACT_WHATSAPP = "5511999999999";
@@ -10,17 +11,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t-4 border-accent bg-neutral-800 pt-6 pb-10 text-neutral-400">
+    <footer className="border-t-4 border-accent bg-neutral-800 pt-10 pb-14 text-neutral-400">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 flex flex-col items-center border-b border-primary/40 pb-8 text-center">
+        <div className="mb-8 flex flex-col items-center gap-2 border-b border-primary/40 pb-8 text-center">
           <Image
-            src="/logo-nome-verde.svg"
+            src="/logo-nome-amarelo.svg"
             alt="David - Psicólogo"
             width={160}
             height={42}
-            className="mb-2 opacity-90"
           />
-          <div className="text-sm text-neutral-500">PSICÓLOGO</div>
+          <PsiSymbol size="sm" variant="accent" />
         </div>
 
         <div className="mb-8 grid grid-cols-1 gap-8 text-center text-sm md:grid-cols-3 md:justify-items-center md:text-left">

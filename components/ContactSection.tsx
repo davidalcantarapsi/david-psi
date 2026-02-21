@@ -23,12 +23,12 @@ export default function ContactSection({
   return (
     <section
       id="contato"
-      className="relative overflow-hidden border-t-4 border-accent bg-primary-500 py-16 text-white md:py-24"
+      className="relative overflow-hidden border-t-4 border-accent bg-primary-500 py-14 text-white md:py-20"
     >
-      <div className="absolute bottom-0 right-0 h-[480px] w-[480px] opacity-[0.06]" aria-hidden>
+      <div className="absolute bottom-0 right-0 z-0 h-[360px] w-[360px] opacity-[0.06]" aria-hidden>
         <img src="/logo-amarelo.svg" alt="" className="h-full w-full object-contain" />
       </div>
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
         <h2 className="mb-6 text-3xl font-bold md:text-4xl">{title}</h2>
         <p className="mb-8 text-lg text-primary-100">{description}</p>
         <div className="flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
