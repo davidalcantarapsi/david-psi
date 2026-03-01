@@ -33,6 +33,13 @@ export default function ContactSection({
         <h2 className="text-3xl font-bold md:text-4xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-primary-100">{description}</p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
+                    <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent bg-white px-8 py-3 font-semibold text-primary-500 transition-colors hover:bg-accent-50"
+          >
+            <Mail className="h-5 w-5" />
+            E-mail
+          </a>
           <a
             href={`https://wa.me/${CONTACT_WHATSAPP}`}
             target="_blank"
@@ -49,13 +56,7 @@ export default function ContactSection({
             </svg>
             WhatsApp
           </a>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent bg-white px-8 py-3 font-semibold text-primary-500 transition-colors hover:bg-accent-50"
-          >
-            <Mail className="h-5 w-5" />
-            E-mail
-          </a>
+
         </div>
       </div>
     </section>
