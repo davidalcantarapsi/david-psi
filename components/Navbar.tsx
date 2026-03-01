@@ -25,36 +25,47 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 border-b-2 border-primary bg-background shadow-sm">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo-verde.svg"
-            alt="David - Psicólogo"
-            width={180}
-            height={48}
-            priority
-            className="h-12 w-auto"
-          />
-          <span className="sr-only">David</span>
-        </Link>
+    <header className="sticky top-0 z-50 border-b border-primary/20 bg-background/90 shadow-sm backdrop-blur-md">
+      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link href="/" className="flex shrink-0 items-center gap-3">
+            <Image
+              src="/logo-verde.svg"
+              alt=""
+              width={140}
+              height={38}
+              priority
+              className="h-9 w-auto"
+            />
+            <div className="hidden flex-col sm:flex sm:flex-col">
+              <span className="text-base font-bold text-foreground leading-tight">
+                David Alcantara
+              </span>
+              <span className="text-xs font-medium text-primary-600">
+                Psicólogo Clínico
+              </span>
+            </div>
+          </Link>
 
-        <div className="flex items-center gap-2 md:gap-6">
-          <div className="hidden items-center gap-6 md:flex">
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className={`text-sm font-medium transition-colors ${
-                isActive(href)
-                  ? "border-b-2 border-accent text-primary-600"
-                  : "text-neutral-700 hover:text-primary-500"
-              }`}
-            >
-              {label}
-            </Link>
-          ))}
-          </div>
+        <div className="hidden flex-1 justify-center px-6 md:flex">
+          <ul className="flex items-center gap-6">
+            {NAV_LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`text-sm font-medium transition-colors ${
+                    isActive(href)
+                      ? "text-primary-600"
+                      : "text-neutral-700 hover:text-primary-500"
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-2 md:gap-4">
           <div
             className="flex rounded-lg border-2 border-primary/30 bg-white p-0.5"
             role="group"
@@ -83,6 +94,12 @@ export default function Navbar() {
               EN
             </button>
           </div>
+          <Link
+            href="#contato"
+            className="hidden rounded-lg border border-primary/20 bg-primary-500 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 md:inline-flex"
+          >
+            Marcar consulta
+          </Link>
 
           <button
             type="button"
@@ -90,13 +107,13 @@ export default function Navbar() {
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {isOpen && (
-        <div className="space-y-2 border-t border-secondary-200 px-4 pb-4 pt-2 md:hidden">
+        <div className="space-y-1 border-t border-secondary-200 px-4 pb-3 pt-2 md:hidden">
           {NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
@@ -111,8 +128,15 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+          <Link
+            href="#contato"
+            onClick={() => setIsOpen(false)}
+            className="mt-3 block w-full rounded-lg border border-primary/20 bg-primary-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+          >
+            Book a Session
+          </Link>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

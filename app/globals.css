@@ -3,7 +3,7 @@
 :root {
   --background: #f8faf8;
   --foreground: #2e2e2e;
-  --border-color: #355e58;
+  --border-color: #2d504b;
 }
 
 @theme inline {
@@ -11,18 +11,18 @@
   --color-foreground: var(--foreground);
   --color-border: var(--border-color);
 
-  /* Verde principal */
-  --color-primary: #355e58;
-  --color-primary-50: #e8eeed;
-  --color-primary-100: #c5d4d1;
-  --color-primary-200: #9fb5b1;
-  --color-primary-300: #7a9691;
-  --color-primary-400: #5a7d78;
-  --color-primary-500: #355e58;
-  --color-primary-600: #2d504b;
-  --color-primary-700: #25423e;
-  --color-primary-800: #1d3532;
-  --color-primary-900: #152826;
+  /* Verde principal (base mais escuro) */
+  --color-primary: #2d504b;
+  --color-primary-50: #e4eceb;
+  --color-primary-100: #bfd0cd;
+  --color-primary-200: #96b0ab;
+  --color-primary-300: #6d908a;
+  --color-primary-400: #4d726c;
+  --color-primary-500: #2d504b;
+  --color-primary-600: #26433f;
+  --color-primary-700: #1f3633;
+  --color-primary-800: #182a28;
+  --color-primary-900: #111e1d;
 
   --color-secondary: #a7b6a2;
   --color-secondary-50: #f4f6f3;
@@ -66,6 +66,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   *,
   *::before,
   *::after {
@@ -141,4 +145,32 @@
 .bg-svg-wrap .bg-svg-content {
   position: relative;
   z-index: 10;
+}
+
+/* Helpers de layout para manter consistencia entre secoes */
+.section-y {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.section-y + .section-y {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section-y {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .section-y + .section-y {
+    margin-top: 2rem;
+  }
+}
+
+.content-shell {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 80rem;
 }

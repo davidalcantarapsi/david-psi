@@ -14,7 +14,15 @@ type FaqAccordionProps = {
 };
 
 export default function FaqAccordion({ faqs }: FaqAccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndexes, setOpenIndexes] = useState<number[]>([0]);
+
+  const isOpen = (index: number) => openIndexes.includes(index);
+
+  const toggleIndex = (index: number) => {
+    setOpenIndexes((prev) =>
+      prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index]
+    );
+  };
 
   return (
     <div className="space-y-4">
@@ -26,7 +34,7 @@ export default function FaqAccordion({ faqs }: FaqAccordionProps) {
           <button
             type="button"
             className="flex w-full items-start justify-between gap-4 px-6 py-4 text-left transition-colors hover:bg-neutral-50"
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            onClick={() => toggleIndex(index)}
           >
             <span className="pr-4 font-semibold text-neutral-900">
               {faq.question}
@@ -34,15 +42,21 @@ export default function FaqAccordion({ faqs }: FaqAccordionProps) {
             <ChevronDown
               size={24}
               className={`shrink-0 text-primary-500 transition-transform ${
-                openIndex === index ? "rotate-180" : ""
+                isOpen(index) ? "rotate-180" : ""
               }`}
             />
           </button>
-          {openIndex === index && (
-            <div className="border-t border-neutral-200 bg-background px-6 py-4 text-neutral-700">
-              {faq.answer}
+          <div
+            className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+              isOpen(index) ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <div className="overflow-hidden">
+              <div className="border-t border-neutral-200 bg-background px-6 py-4 text-neutral-700">
+                {faq.answer}
+              </div>
             </div>
-          )}
+          </div>
         </div>
       ))}
     </div>
