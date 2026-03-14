@@ -1,9 +1,19 @@
-/**
- * Server-side texts (português). Carrega messages/pt.json.
- */
+export type Locale = "pt" | "en";
+export const defaultLocale: Locale = "pt";
+export const locales: Locale[] = ["pt", "en"];
 
-export async function getMessages(): Promise<Record<string, unknown>> {
-  return (await import(`../messages/pt.json`)).default;
+const messageCache: Partial<Record<Locale, Record<string, unknown>>> = {};
+
+export async function getMessages(
+  locale: Locale = defaultLocale
+): Promise<Record<string, unknown>> {
+  if (messageCache[locale]) return messageCache[locale]!;
+  const msgs =
+    locale === "en"
+      ? (await import("../messages/en.json")).default
+      : (await import("../messages/pt.json")).default;
+  messageCache[locale] = msgs;
+  return msgs;
 }
 
 export function getT(

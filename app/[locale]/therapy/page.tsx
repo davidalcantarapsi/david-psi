@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
-import { getMessages, getT } from "@/lib/server-i18n";
+import { getMessages, getT, type Locale } from "@/lib/server-i18n";
 
 const STEPS = [
   { key: "step1", descKey: "step1Desc" },
@@ -12,18 +12,22 @@ const STEPS = [
   { key: "step5", descKey: "step5Desc" },
 ] as const;
 
-export default async function TerapiaPage() {
-  const messages = await getMessages();
+type Props = { params: Promise<{ locale: string }> };
+
+export default async function TherapyPage({ params }: Props) {
+  const { locale } = await params;
+  const messages = await getMessages(locale as Locale);
   const tTherapy = getT(messages, "therapy");
+  const tBreadcrumbs = getT(messages, "breadcrumbs");
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <PageHero
         title={tTherapy("title")}
         description={tTherapy("description")}
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: tTherapy("title"), href: "/terapia" },
+          { label: tBreadcrumbs("home"), href: `/${locale}` },
+          { label: tTherapy("title"), href: `/${locale}/therapy` },
         ]}
       />
 
@@ -31,36 +35,36 @@ export default async function TerapiaPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div className="rounded-xl border border-primary/20 bg-white p-6 shadow-sm">
-              <h2 className="mb-4 text-2xl font-bold text-foreground">{tTherapy("forWhoTitle")}</h2>
+              <h2 data-i18n="therapy.forWhoTitle" className="mb-4 text-2xl font-bold text-foreground">{tTherapy("forWhoTitle")}</h2>
               <ul className="list-disc space-y-3 pl-5 text-neutral-700">
-                <li>{tTherapy("forWho1")}</li>
-                <li>{tTherapy("forWho2")}</li>
-                <li>{tTherapy("forWho3")}</li>
-                <li>{tTherapy("forWho4")}</li>
-                <li>{tTherapy("forWho5")}</li>
+                <li data-i18n="therapy.forWho1">{tTherapy("forWho1")}</li>
+                <li data-i18n="therapy.forWho2">{tTherapy("forWho2")}</li>
+                <li data-i18n="therapy.forWho3">{tTherapy("forWho3")}</li>
+                <li data-i18n="therapy.forWho4">{tTherapy("forWho4")}</li>
+                <li data-i18n="therapy.forWho5">{tTherapy("forWho5")}</li>
               </ul>
             </div>
             <div className="rounded-xl border border-accent/40 bg-white p-6 shadow-sm">
-              <h2 className="mb-3 text-2xl font-bold text-foreground">{tTherapy("onlineTitle")}</h2>
-              <p className="mb-4 text-neutral-700">{tTherapy("onlineDescription")}</p>
-              <p className="mb-3 font-medium text-foreground">{tTherapy("onlineSubtitle")}</p>
+              <h2 data-i18n="therapy.onlineTitle" className="mb-3 text-2xl font-bold text-foreground">{tTherapy("onlineTitle")}</h2>
+              <p data-i18n="therapy.onlineDescription" className="mb-4 text-neutral-700">{tTherapy("onlineDescription")}</p>
+              <p data-i18n="therapy.onlineSubtitle" className="mb-3 font-medium text-foreground">{tTherapy("onlineSubtitle")}</p>
               <ul className="list-disc space-y-2 pl-5 text-neutral-700">
-                <li>{tTherapy("online1")}</li>
-                <li>{tTherapy("online2")}</li>
-                <li>{tTherapy("online3")}</li>
-                <li>{tTherapy("online4")}</li>
+                <li data-i18n="therapy.online1">{tTherapy("online1")}</li>
+                <li data-i18n="therapy.online2">{tTherapy("online2")}</li>
+                <li data-i18n="therapy.online3">{tTherapy("online3")}</li>
+                <li data-i18n="therapy.online4">{tTherapy("online4")}</li>
               </ul>
-              <p className="mt-4 text-neutral-700">{tTherapy("onlineEffectiveness")}</p>
+              <p data-i18n="therapy.onlineEffectiveness" className="mt-4 text-neutral-700">{tTherapy("onlineEffectiveness")}</p>
             </div>
           </div>
 
-          <h3 className="mb-6 text-2xl font-bold text-foreground">{tTherapy("howItWorks")}</h3>
+          <h3 data-i18n="therapy.howItWorks" className="mb-6 text-2xl font-bold text-foreground">{tTherapy("howItWorks")}</h3>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch">
             <div className="overflow-hidden rounded-xl border-2 border-accent/50 bg-white shadow-sm lg:h-full">
               <div className="relative h-[450px] w-full sm:h-[420px] lg:h-full">
                 <Image
                   src="/foto-3.jpg"
-                  alt="Terapia"
+                  alt={tTherapy("imageAlt")}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover image-custom-position-terapia"
@@ -77,8 +81,8 @@ export default async function TerapiaPage() {
                     <span className="text-base font-bold">{index + 1}</span>
                   </div>
                   <div>
-                    <h4 className="mb-1 text-lg font-bold text-foreground">{tTherapy(key)}</h4>
-                    <p className="text-neutral-700">{tTherapy(descKey)}</p>
+                    <h4 data-i18n={`therapy.${key}`} className="mb-1 text-lg font-bold text-foreground">{tTherapy(key)}</h4>
+                    <p data-i18n={`therapy.${descKey}`} className="text-neutral-700">{tTherapy(descKey)}</p>
                   </div>
                   <CheckCircle2 className="ml-auto h-6 w-6 shrink-0 text-primary-500" />
                 </div>

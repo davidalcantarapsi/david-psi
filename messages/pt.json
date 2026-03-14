@@ -3,20 +3,32 @@
     "home": "Página inicial",
     "about": "Sobre",
     "therapy": "Terapia",
-    "faq": "Perguntas",
-    "blog": "Blog"
+    "faq": "Perguntas frequentes",
+    "blog": "Blog",
+    "bookSession": "Marcar consulta",
+    "selectLanguage": "Selecionar idioma",
+    "menuLabel": "Menu",
+    "brandName": "David Alcantara",
+    "brandSubtitle": "Psicólogo Clínico"
   },
   "home": {
     "welcome": "Psicoterapia estruturada e orientada a resultados",
     "headline": "Para quem exige clareza e busca resultados consistentes. Terapia online e discreta no Brasil e exterior.",
     "cta": "Solicite uma avaliação.",
+    "badge": "Atendimento online no Brasil e exterior",
+    "responseTime": "Resposta inicial em até 24h",
+    "heroImageAlt": "Consultório psicológico",
     "aboutTitle": "Sobre mim",
     "aboutExperience": "Sou psicólogo clínico formado pela Universidade Federal do Espírito Santo, com atuação voltada a intervenções estruturadas e orientadas a resultados.",
+    "aboutLinkText": "Ver página completa de Sobre",
+    "aboutImageAlt": "David - Psicólogo",
     "aboutCta": "Saber mais sobre minha formação",
     "therapyTitle": "Terapia",
     "therapyForWho": "Para quem?",
     "therapyPrinciples": "Para adultos que buscam um processo estruturado, com discrição, clareza e acompanhamento técnico contínuo.",
+    "therapyLinkText": "Ver página completa de Terapia",
     "therapyCta": "Como funciona a terapia",
+    "faqLinkText": "Ver todas as perguntas",
     "blogTitle": "Blog",
     "blogIntro": "Conteúdo sobre psicologia e saúde mental. Visite a página de blog para artigos e reflexões.",
     "blogCta": "Ver todos os artigos"
@@ -39,6 +51,7 @@
     "online3": "Menor preocupação com logística;",
     "online4": "Ambiente seguro, discreto e confidencial.",
     "onlineEffectiveness": "A qualidade técnica e efetividade são preservadas, seguindo os mesmos critérios clínicos aplicados no atendimento presencial.",
+    "imageAlt": "Terapia",
     "step1": "Avaliação",
     "step1Desc": "Primeira etapa para compreender sua história, demandas e objetivos.",
     "step2": "Definição de objetivos",
@@ -61,11 +74,14 @@
     "principle1": "Transparência",
     "principle2": "Discrição",
     "principle3": "Foco em resultados",
-    "principle4": "Atendimentos personalizados"
+    "principle4": "Atendimentos personalizados",
+    "imageAlt": "David - Psicólogo"
   },
   "faq": {
     "title": "Perguntas frequentes",
     "description": "Respostas para dúvidas comuns sobre psicoterapia e meu atendimento.",
+    "clickHere": "Clique aqui.",
+    "contactHere": "Em caso de dúvida, me contate aqui.",
     "q1": "Como agendo minha primeira consulta?",
     "a1": "Você pode me mandar uma mensagem no WhatsApp. Agendaremos o seu atendimento o quanto antes.",
     "q2": "Quanto tempo duram as sessões?",
@@ -82,23 +98,33 @@
     "description": "Artigos e reflexões sobre psicologia, bem-estar mental e desenvolvimento pessoal.",
     "readMore": "Ler mais",
     "backToBlog": "Voltar ao blog",
-    "alsoRead": "Leia também"
+    "alsoRead": "Leia também",
+    "notFound": "Artigo não encontrado"
   },
   "footer": {
     "nav": "Navegação",
     "resources": "Recursos",
+    "faq": "FAQ",
     "contact": "Contato",
-    "rights": "Todos os direitos reservados."
+    "rights": "Todos os direitos reservados.",
+    "copyright": "David. Todos os direitos reservados.",
+    "whatsappLabel": "WhatsApp"
   },
   "contact": {
     "title": "Pronto para começar?",
-    "description": "Entre em contato para agendar sua primeira sessão. Estarei feliz em ajudar na sua jornada de autoconhecimento e bem-estar.",
-    "email": "Enviar e-mail",
-    "whatsapp": "Mandar mensagem",
+    "description": "Entre em contato para agendar sua primeira sessão com discrição, clareza e método.",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
     "blogTitle": "Quer discutir algum tema?",
-    "blogDescription": "Entre em contato para sugerir tópicos de artigos ou agendar uma consulta."
+    "blogDescription": "Entre em contato para sugerir tópicos de artigos ou agendar uma consulta.",
+    "whatsappFloat": "Contato via WhatsApp"
   },
   "breadcrumbs": {
     "home": "Home"
+  },
+  "metadata": {
+    "title": "David | Psicólogo",
+    "titleTemplate": "%s | David - Psicólogo",
+    "description": "Psicólogo clínico. Atendimento online. Experiência em depressão, ansiedade, TDAH, TOC e mais."
   }
 }

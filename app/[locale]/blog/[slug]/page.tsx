@@ -5,47 +5,57 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
-import { getMessages, getT } from "@/lib/server-i18n";
-import { posts, getPostBySlug } from "../posts";
+import { getMessages, getT, locales, type Locale } from "@/lib/server-i18n";
+import { getPosts, getPostBySlug } from "../posts";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 };
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://david-psychologist.example.com";
 
 export async function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }));
+  const params: { locale: string; slug: string }[] = [];
+  for (const locale of locales) {
+    for (const post of getPosts(locale)) {
+      params.push({ locale, slug: post.slug });
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
-  if (!post) return { title: "Artigo não encontrado" };
+  const { locale, slug } = await params;
+  const messages = await getMessages(locale as Locale);
+  const tBlog = getT(messages, "blog");
+  const post = getPostBySlug(slug, locale as Locale);
+  if (!post) return { title: tBlog("notFound") };
   return {
     title: post.title,
     description: post.excerpt,
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `${siteUrl}/blog/${post.slug}`,
+      url: `${siteUrl}/${locale}/blog/${post.slug}`,
       images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
     },
     alternates: {
-      canonical: `${siteUrl}/blog/${post.slug}`,
+      canonical: `${siteUrl}/${locale}/blog/${post.slug}`,
     },
   };
 }
 
 export default async function BlogArticlePage({ params }: Props) {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const { locale, slug } = await params;
+  const lc = locale as Locale;
+  const post = getPostBySlug(slug, lc);
   if (!post) notFound();
 
-  const messages = await getMessages();
+  const messages = await getMessages(lc);
   const t = getT(messages, "blog");
-  const otherPosts = posts.filter((p) => p.slug !== slug);
+  const tBreadcrumbs = getT(messages, "breadcrumbs");
+  const otherPosts = getPosts(lc).filter((p) => p.slug !== slug);
   const paragraphs = post.content.trim().split(/\n\n+/);
 
   function renderWithBold(text: string) {
@@ -62,14 +72,14 @@ export default async function BlogArticlePage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <PageHero
         title={post.title}
         description={post.excerpt}
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: t("title"), href: "/blog" },
-          { label: post.title, href: `/blog/${post.slug}` },
+          { label: tBreadcrumbs("home"), href: `/${locale}` },
+          { label: t("title"), href: `/${locale}/blog` },
+          { label: post.title, href: `/${locale}/blog/${post.slug}` },
         ]}
       />
 
@@ -108,10 +118,7 @@ export default async function BlogArticlePage({ params }: Props) {
 
           <div className="prose prose-neutral prose-lg max-w-none">
             {paragraphs.map((paragraph, index) => (
-              <p
-                key={index}
-                className="mb-6 leading-relaxed text-neutral-700"
-              >
+              <p key={index} className="mb-6 leading-relaxed text-neutral-700">
                 {renderWithBold(paragraph)}
               </p>
             ))}
@@ -119,10 +126,10 @@ export default async function BlogArticlePage({ params }: Props) {
 
           <div className="mt-12 border-t-2 border-primary/20 pt-8">
             <Link
-              href="/blog"
+              href={`/${locale}/blog`}
               className="inline-flex items-center gap-2 font-semibold text-primary-500 transition-colors hover:text-primary-600"
             >
-              ← {t("backToBlog")}
+              <span data-i18n="blog.backToBlog">← {t("backToBlog")}</span>
             </Link>
           </div>
         </div>
@@ -131,14 +138,14 @@ export default async function BlogArticlePage({ params }: Props) {
       {otherPosts.length > 0 && (
         <section className="border-t-2 border-accent/40 bg-secondary-100/30 py-8 md:py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="mb-8 text-2xl font-bold text-foreground">
+            <h2 data-i18n="blog.alsoRead" className="mb-8 text-2xl font-bold text-foreground">
               {t("alsoRead")}
             </h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {otherPosts.map((other, i) => (
                 <Link
                   key={other.slug}
-                  href={`/blog/${other.slug}`}
+                  href={`/${locale}/blog/${other.slug}`}
                   className={`flex flex-col overflow-hidden rounded-xl border-2 bg-white shadow-sm transition-shadow hover:shadow-md ${i % 2 === 0 ? "border-primary/30 border-l-4 border-l-primary" : "border-accent/30 border-l-4 border-l-accent"}`}
                 >
                   <div className="relative h-40 w-full">
@@ -160,7 +167,7 @@ export default async function BlogArticlePage({ params }: Props) {
                     <p className="mb-3 line-clamp-2 text-sm text-neutral-600">
                       {other.excerpt}
                     </p>
-                    <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary-500">
+                    <span data-i18n="blog.readMore" className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary-500">
                       {t("readMore")}
                       <ArrowRight size={14} />
                     </span>

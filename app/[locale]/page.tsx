@@ -1,26 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Calendar,
-} from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
 import BackgroundPsi from "@/components/BackgroundPsi";
-import { getMessages, getT } from "@/lib/server-i18n";
-import { posts } from "./blog/posts";
+import { getMessages, getT, type Locale } from "@/lib/server-i18n";
+import { getPosts } from "./blog/posts";
 
-export default async function HomePage() {
-  const messages = await getMessages();
+type Props = { params: Promise<{ locale: string }> };
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
+  const lc = locale as Locale;
+  const messages = await getMessages(lc);
   const t = getT(messages, "home");
   const tBlog = getT(messages, "blog");
   const tAbout = getT(messages, "about");
   const tTherapy = getT(messages, "therapy");
   const tFaq = getT(messages, "faq");
 
-  const displayPosts = posts.slice(0, 3);
+  const displayPosts = getPosts(lc).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <section className="relative overflow-hidden bg-primary-500 text-white">
         <div className="absolute -left-48 top-1/2 z-0 h-[1000px] w-[1000px] -translate-y-1/2 opacity-[0.08]" aria-hidden>
           <span className="relative block size-full">
@@ -30,13 +31,24 @@ export default async function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-16 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative rounded-2xl border border-white/15 bg-white/5 p-6 shadow-2xl backdrop-blur-sm md:p-8">
-              <span className="mb-5 inline-block rounded-full border border-accent/60 bg-accent/20 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-accent-100">
-                Atendimento online no Brasil e exterior
+              <span data-i18n="home.badge" className="mb-5 inline-block rounded-full border border-accent/60 bg-accent/20 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-accent-100">
+                {t("badge")}
               </span>
-              <h1 className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
-                {t("welcome")}
+              <h1 data-i18n="home.welcome" className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
+                {(() => {
+                  const welcome = t("welcome");
+                  const keyword = lc === "en" ? "results" : "resultados";
+                  const parts = welcome.split(new RegExp(`(${keyword})`));
+                  return parts.map((part, i) =>
+                    part === keyword ? (
+                      <span key={i} className="text-accent-200">{part}</span>
+                    ) : (
+                      part
+                    )
+                  );
+                })()}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-100">
+              <p data-i18n="home.headline" className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-100">
                 {t("headline")}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -44,11 +56,11 @@ export default async function HomePage() {
                   href="#contato"
                   className="inline-flex items-center gap-2 rounded-lg border-2 border-accent bg-accent-400 px-6 py-3 font-semibold text-primary-800 transition-colors hover:bg-accent-300"
                 >
-                  {t("cta")}
+                  <span data-i18n="home.cta">{t("cta")}</span>
                   <ArrowRight size={18} />
                 </Link>
-                <span className="text-sm text-primary-100">
-                  Resposta inicial em at&eacute; 24h
+                <span data-i18n="home.responseTime" className="text-sm text-primary-100">
+                  {t("responseTime")}
                 </span>
               </div>
             </div>
@@ -57,7 +69,7 @@ export default async function HomePage() {
               <div className="relative aspect-4/5 w-full md:aspect-3/4">
                 <Image
                   src="/foto-capa.jpg"
-                  alt="Consultório psicológico"
+                  alt={t("heroImageAlt")}
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover object-center"
@@ -79,13 +91,13 @@ export default async function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-8 rounded-2xl border border-primary/20 bg-white p-6 shadow-sm md:grid-cols-5 md:p-8">
             <div className="space-y-4 md:col-span-3">
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl">{t("aboutTitle")}</h2>
-              <p className="text-lg leading-relaxed text-neutral-700">{tAbout("formation")}</p>
+              <h2 data-i18n="home.aboutTitle" className="text-3xl font-bold text-foreground md:text-4xl">{t("aboutTitle")}</h2>
+              <p data-i18n="about.formation" className="text-lg leading-relaxed text-neutral-700">{tAbout("formation")}</p>
               <Link
-                href="/sobre"
+                href={`/${locale}/about`}
                 className="inline-flex items-center gap-2 font-semibold text-primary-500 transition-colors hover:text-primary-600"
               >
-                Ver página completa de Sobre
+                <span data-i18n="home.aboutLinkText">{t("aboutLinkText")}</span>
                 <ArrowRight size={20} />
               </Link>
             </div>
@@ -93,7 +105,7 @@ export default async function HomePage() {
               <div className="relative h-[300px] min-h-[300px] w-full md:h-[550px] md:min-h-[550px]">
                 <Image
                   src="/foto-3.jpg"
-                  alt="David - Psicólogo"
+                  alt={t("aboutImageAlt")}
                   fill
                   className="object-cover image-sobre-mim"
                   sizes="(max-width: 768px) 100vw, 40vw"
@@ -114,14 +126,14 @@ export default async function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-8 rounded-2xl border border-primary/20 bg-white p-6 shadow-sm md:grid-cols-5 md:p-8">
             <div className="space-y-4 md:col-span-5">
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl">{tTherapy("title")}</h2>
-              <p className="text-lg leading-relaxed text-neutral-700">{tTherapy("description")}</p>
-              <p className="text-neutral-700">{tTherapy("forWho1")}</p>
+              <h2 data-i18n="therapy.title" className="text-3xl font-bold text-foreground md:text-4xl">{tTherapy("title")}</h2>
+              <p data-i18n="therapy.description" className="text-lg leading-relaxed text-neutral-700">{tTherapy("description")}</p>
+              <p data-i18n="therapy.forWho1" className="text-neutral-700">{tTherapy("forWho1")}</p>
               <Link
-                href="/terapia"
+                href={`/${locale}/therapy`}
                 className="inline-flex items-center gap-2 font-semibold text-primary-500 transition-colors hover:text-primary-600"
               >
-                Ver página completa de Terapia
+                <span data-i18n="home.therapyLinkText">{t("therapyLinkText")}</span>
                 <ArrowRight size={20} />
               </Link>
             </div>
@@ -138,26 +150,26 @@ export default async function HomePage() {
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl rounded-xl border-2 border-primary/20 border-t-4 border-t-accent bg-white p-6 shadow-sm md:p-8">
-            <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+            <h2 data-i18n="faq.title" className="text-3xl font-bold text-foreground md:text-4xl">
               {tFaq("title")}
             </h2>
-            <p className="mt-4 text-lg text-neutral-700">{tFaq("description")}</p>
+            <p data-i18n="faq.description" className="mt-4 text-lg text-neutral-700">{tFaq("description")}</p>
             <ul className="mt-6 space-y-3 text-neutral-700">
-              <li className="border-l-4 border-primary/40 bg-primary-50/40 px-4 py-3 font-medium">
+              <li data-i18n="faq.q1" className="border-l-4 border-primary/40 bg-primary-50/40 px-4 py-3 font-medium">
                 {tFaq("q1")}
               </li>
-              <li className="border-l-4 border-primary/40 bg-primary-50/40 px-4 py-3 font-medium">
+              <li data-i18n="faq.q2" className="border-l-4 border-primary/40 bg-primary-50/40 px-4 py-3 font-medium">
                 {tFaq("q2")}
               </li>
-              <li className="border-l-4 border-primary/40 bg-primary-50/40 px-4 py-3 font-medium">
+              <li data-i18n="faq.q3" className="border-l-4 border-primary/40 bg-primary-50/40 px-4 py-3 font-medium">
                 {tFaq("q3")}
               </li>
             </ul>
             <Link
-              href="/perguntas"
+              href={`/${locale}/faq`}
               className="mt-6 inline-flex items-center gap-2 font-semibold text-primary-500 transition-colors hover:text-primary-600"
             >
-              Ver todas as perguntas
+              <span data-i18n="home.faqLinkText">{t("faqLinkText")}</span>
               <ArrowRight size={18} />
             </Link>
           </div>
@@ -170,10 +182,10 @@ export default async function HomePage() {
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="mb-6 text-center text-3xl font-bold text-foreground md:text-4xl">
+            <h2 data-i18n="home.blogTitle" className="mb-6 text-center text-3xl font-bold text-foreground md:text-4xl">
               {t("blogTitle")}
             </h2>
-            <p className="mx-auto max-w-5xl text-lg text-neutral-700">
+            <p data-i18n="home.blogIntro" className="mx-auto max-w-5xl text-lg text-neutral-700">
               {t("blogIntro")}
             </p>
           </div>
@@ -183,7 +195,7 @@ export default async function HomePage() {
                 {displayPosts.map((post, i) => (
                   <Link
                     key={post.slug}
-                    href={`/blog/${post.slug}`}
+                    href={`/${locale}/blog/${post.slug}`}
                     className={`flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md ${
                       i % 2 === 0
                         ? "border-l-4 border-l-primary"
@@ -191,29 +203,19 @@ export default async function HomePage() {
                     }`}
                   >
                     <div className="relative h-40 w-full">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover"
-                      />
+                      <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
                     </div>
                     <div className="flex flex-col p-5">
                       <span className="mb-2 inline-block w-fit rounded-full bg-primary-100 px-2.5 py-0.5 text-xs font-semibold text-primary-700">
                         {post.category}
                       </span>
-                      <h3 className="mb-2 line-clamp-2 text-base font-bold text-neutral-900">
-                        {post.title}
-                      </h3>
-                      <p className="mb-3 line-clamp-3 text-sm text-neutral-600">
-                        {post.excerpt}
-                      </p>
+                      <h3 className="mb-2 line-clamp-2 text-base font-bold text-neutral-900">{post.title}</h3>
+                      <p className="mb-3 line-clamp-3 text-sm text-neutral-600">{post.excerpt}</p>
                       <span className="mb-2 flex items-center gap-1.5 text-xs text-neutral-500">
                         <Calendar size={14} />
                         {post.date}
                       </span>
-                      <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary-500">
+                      <span data-i18n="blog.readMore" className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary-500">
                         {tBlog("readMore")}
                         <ArrowRight size={14} />
                       </span>
@@ -223,10 +225,10 @@ export default async function HomePage() {
               </div>
               <div className="text-center">
                 <Link
-                  href="/blog"
+                  href={`/${locale}/blog`}
                   className="inline-flex items-center gap-2 font-semibold text-primary-500 transition-colors hover:text-primary-600"
                 >
-                  {t("blogCta")}
+                  <span data-i18n="home.blogCta">{t("blogCta")}</span>
                   <ArrowRight size={20} />
                 </Link>
               </div>

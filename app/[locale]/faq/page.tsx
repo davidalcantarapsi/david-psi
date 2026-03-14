@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
-import { getMessages, getT } from "@/lib/server-i18n";
+import { getMessages, getT, type Locale } from "@/lib/server-i18n";
 
 const CONTACT_WHATSAPP = "5511999999999";
 
@@ -13,9 +13,13 @@ const FAQ_KEYS = [
   { q: "q5", a: "a5" },
 ] as const;
 
-export default async function PerguntasPage() {
-  const messages = await getMessages();
+type Props = { params: Promise<{ locale: string }> };
+
+export default async function FaqPage({ params }: Props) {
+  const { locale } = await params;
+  const messages = await getMessages(locale as Locale);
   const tFaq = getT(messages, "faq");
+  const tBreadcrumbs = getT(messages, "breadcrumbs");
 
   const faqs: FaqItem[] = FAQ_KEYS.map(({ q, a }) => {
     const answer = tFaq(a);
@@ -32,7 +36,7 @@ export default async function PerguntasPage() {
               rel="noopener noreferrer"
               className="font-semibold text-primary-600 underline underline-offset-2"
             >
-              Clique aqui.
+              {tFaq("clickHere")}
             </a>
           </>
         ),
@@ -51,27 +55,24 @@ export default async function PerguntasPage() {
               rel="noopener noreferrer"
               className="font-semibold text-primary-600 underline underline-offset-2"
             >
-              Em caso de dúvida, me contate aqui.
+              {tFaq("contactHere")}
             </a>
           </>
         ),
       };
     }
 
-    return {
-      question: tFaq(q),
-      answer,
-    };
+    return { question: tFaq(q), answer };
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <PageHero
         title={tFaq("title")}
         description={tFaq("description")}
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: tFaq("title"), href: "/perguntas" },
+          { label: tBreadcrumbs("home"), href: `/${locale}` },
+          { label: tFaq("title"), href: `/${locale}/faq` },
         ]}
       />
 

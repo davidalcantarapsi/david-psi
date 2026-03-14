@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Breadcrumbs, { BreadcrumbItem } from "./Breadcrumbs";
 import BackgroundPsi from "./BackgroundPsi";
 
@@ -20,7 +21,7 @@ export default function PageHero({
     <section className="relative overflow-hidden border-b-2 border-accent/50 bg-primary-500 py-5 text-white md:py-8 lg:py-10">
       {backgroundElement === "logo" ? (
         <div className="absolute right-0 top-1/2 z-0 h-[560px] w-[560px] -translate-y-1/2 opacity-[0.06]" aria-hidden>
-          <img src="/logo-verde.svg" alt="" className="h-full w-full object-contain" />
+          <Image src="/logo-verde.svg" alt="" fill className="object-contain" />
         </div>
       ) : (
         <div className="absolute right-0 top-1/2 z-0 -translate-y-1/2" aria-hidden>
