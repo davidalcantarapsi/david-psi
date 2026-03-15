@@ -7,9 +7,17 @@ const siteUrl =
 
 const staticPaths = [
   { path: "", priority: 1 as const, changeFrequency: "weekly" as const },
-  { path: "/about", priority: 0.8 as const, changeFrequency: "monthly" as const },
-  { path: "/therapy", priority: 0.8 as const, changeFrequency: "monthly" as const },
-  { path: "/faq", priority: 0.8 as const, changeFrequency: "monthly" as const },
+  {
+    path: "/about",
+    priority: 0.8 as const,
+    changeFrequency: "weekly" as const,
+  },
+  {
+    path: "/therapy",
+    priority: 0.8 as const,
+    changeFrequency: "weekly" as const,
+  },
+  { path: "/faq", priority: 0.8 as const, changeFrequency: "weekly" as const },
   { path: "/blog", priority: 0.8 as const, changeFrequency: "weekly" as const },
 ];
 

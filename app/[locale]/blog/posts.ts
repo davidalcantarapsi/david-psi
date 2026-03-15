@@ -24,7 +24,8 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
       image: "/foto-capa.jpg",
       category: "Bem-estar",
       slug: "saude-mental-bem-estar",
-      content: "Conteúdo do artigo em português.",
+      content:
+        "Cuidar da **saúde mental** é tão importante quanto cuidar da saúde física. Reservar momentos para si mesmo, buscar apoio profissional quando necessário e manter hábitos saudáveis são passos essenciais para uma vida equilibrada.",
     },
   ],
   en: [
@@ -38,7 +39,8 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
       image: "/foto-capa.jpg",
       category: "Well-being",
       slug: "saude-mental-bem-estar",
-      content: "Article content in English.",
+      content:
+        "Taking care of your **mental health** is just as important as taking care of your physical health. Setting aside time for yourself, seeking professional support when needed, and maintaining healthy habits are essential steps toward a balanced life.",
     },
   ],
 };
@@ -49,7 +51,7 @@ export function getPosts(locale: Locale): BlogPost[] {
 
 export function getPostBySlug(
   slug: string,
-  locale: Locale
+  locale: Locale,
 ): BlogPost | undefined {
   return getPosts(locale).find((post) => post.slug === slug);
 }

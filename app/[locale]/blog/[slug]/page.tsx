@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MarkdownContent from "@/components/MarkdownContent";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -56,20 +57,6 @@ export default async function BlogArticlePage({ params }: Props) {
   const t = getT(messages, "blog");
   const tBreadcrumbs = getT(messages, "breadcrumbs");
   const otherPosts = getPosts(lc).filter((p) => p.slug !== slug);
-  const paragraphs = post.content.trim().split(/\n\n+/);
-
-  function renderWithBold(text: string) {
-    const parts = text.split("**");
-    return parts.map((part, i) =>
-      i % 2 === 1 ? (
-        <strong key={i} className="font-semibold text-neutral-900">
-          {part}
-        </strong>
-      ) : (
-        part
-      )
-    );
-  }
 
   return (
     <div className="bg-background">
@@ -117,11 +104,7 @@ export default async function BlogArticlePage({ params }: Props) {
           </div>
 
           <div className="prose prose-neutral prose-lg max-w-none">
-            {paragraphs.map((paragraph, index) => (
-              <p key={index} className="mb-6 leading-relaxed text-neutral-700">
-                {renderWithBold(paragraph)}
-              </p>
-            ))}
+            <MarkdownContent>{post.content}</MarkdownContent>
           </div>
 
           <div className="mt-12 border-t-2 border-primary/20 pt-8">
