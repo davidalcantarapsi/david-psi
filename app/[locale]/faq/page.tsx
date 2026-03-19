@@ -3,7 +3,7 @@ import ContactSection from "@/components/ContactSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import { getMessages, getT, type Locale } from "@/lib/server-i18n";
 
-const CONTACT_WHATSAPP = "5511999999999";
+const CONTACT_WHATSAPP = "5527996062965";
 
 const FAQ_KEYS = [
   { q: "q1", a: "a1" },

@@ -31,7 +31,7 @@ export default async function HomePage({ params }: Props) {
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-16 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative rounded-2xl border border-white/15 bg-white/5 p-6 shadow-2xl backdrop-blur-sm md:p-8">
-              <span data-i18n="home.badge" className="mb-5 inline-block rounded-full border border-accent/60 bg-accent/20 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-accent-100">
+              <span data-i18n="home.badge" className="mb-5 inline-block rounded-full border border-accent/60 bg-accent/20 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-accent-100 text-center">
                 {t("badge")}
               </span>
               <h1 data-i18n="home.welcome" className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">

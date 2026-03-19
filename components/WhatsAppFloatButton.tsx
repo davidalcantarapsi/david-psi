@@ -2,7 +2,7 @@
 
 import { useTranslation } from "./LocaleProvider";
 
-const CONTACT_WHATSAPP = "5511999999999";
+const CONTACT_WHATSAPP = "5527996062965";
 
 export default function WhatsAppFloatButton() {
   const { t } = useTranslation("contact");

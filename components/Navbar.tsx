@@ -29,22 +29,22 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-primary/20 bg-background/90 shadow-sm backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-neutral-700 bg-neutral-900/95 shadow-sm backdrop-blur-md">
       <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href={localePath("/")} className="flex shrink-0 items-center gap-3">
           <Image
-            src="/logo-verde.svg"
+            src="/logo-amarelo.svg"
             alt=""
             width={140}
             height={38}
             priority
-            className="h-9 w-auto"
+            className="h-9 w-auto drop-shadow-[0_0_0.5px_#E8C547] filter-[drop-shadow(0_0_0.5px_#E8C547)_drop-shadow(0_0_0.5px_#E8C547)]"
           />
           <div className="hidden flex-col sm:flex sm:flex-col">
-            <span data-i18n="nav.brandName" className="text-base font-bold text-foreground leading-tight">
+            <span data-i18n="nav.brandName" className="text-base leading-tight font-bold text-white">
               {t("brandName")}
             </span>
-            <span data-i18n="nav.brandSubtitle" className="text-xs font-medium text-primary-600">
+            <span data-i18n="nav.brandSubtitle" className="text-xs font-medium text-accent/90">
               {t("brandSubtitle")}
             </span>
           </div>
@@ -59,8 +59,8 @@ export default function Navbar() {
                   {...attr(labelKey)}
                   className={`text-sm font-medium transition-colors ${
                     isActive(path)
-                      ? "text-primary-600"
-                      : "text-neutral-700 hover:text-primary-500"
+                      ? "text-accent"
+                      : "text-neutral-300 hover:text-white"
                   }`}
                 >
                   {t(labelKey)}
@@ -72,7 +72,7 @@ export default function Navbar() {
 
         <div className="flex shrink-0 items-center gap-2 md:gap-4">
           <div
-            className="flex rounded-lg border-2 border-primary/30 bg-white p-0.5"
+            className="flex rounded-lg border border-neutral-600 bg-neutral-800 p-0.5"
             role="group"
             aria-label={t("selectLanguage")}
           >
@@ -81,8 +81,8 @@ export default function Navbar() {
               onClick={() => setLocale("pt")}
               className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
                 locale === "pt"
-                  ? "bg-primary-500 text-white"
-                  : "text-neutral-600 hover:bg-primary-50 hover:text-primary-600"
+                  ? "bg-accent text-neutral-900"
+                  : "text-neutral-300 hover:bg-neutral-700 hover:text-white"
               }`}
             >
               PT
@@ -92,8 +92,8 @@ export default function Navbar() {
               onClick={() => setLocale("en")}
               className={`rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
                 locale === "en"
-                  ? "bg-primary-500 text-white"
-                  : "text-neutral-600 hover:bg-primary-50 hover:text-primary-600"
+                  ? "bg-accent text-neutral-900"
+                  : "text-neutral-300 hover:bg-neutral-700 hover:text-white"
               }`}
             >
               EN
@@ -102,14 +102,14 @@ export default function Navbar() {
           <Link
             href="#contato"
             data-i18n="nav.bookSession"
-            className="hidden rounded-lg border border-primary/20 bg-primary-500 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 md:inline-flex"
+            className="hidden rounded-lg border border-accent/50 bg-accent px-3 py-1.5 text-sm font-semibold text-neutral-900 transition-colors hover:bg-accent/90 md:inline-flex"
           >
             {t("bookSession")}
           </Link>
 
           <button
             type="button"
-            className="p-2 text-neutral-700 hover:text-primary-500 md:hidden"
+            className="p-2 text-neutral-300 hover:text-white md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label={t("menuLabel")}
           >
@@ -119,7 +119,7 @@ export default function Navbar() {
       </nav>
 
       {isOpen && (
-        <div className="space-y-1 border-t border-secondary-200 px-4 pb-3 pt-2 md:hidden">
+        <div className="space-y-1 border-t border-neutral-700 bg-neutral-900 px-4 pb-3 pt-2 md:hidden">
           {NAV_LINKS.map(({ path, labelKey }) => (
             <Link
               key={path}
@@ -128,8 +128,8 @@ export default function Navbar() {
               {...attr(labelKey)}
               className={`block rounded px-4 py-2 text-sm font-medium transition-colors ${
                 isActive(path)
-                  ? "bg-primary-50 text-primary-500"
-                  : "text-neutral-700 hover:bg-neutral-100 hover:text-primary-500"
+                  ? "bg-neutral-800 text-accent"
+                  : "text-neutral-300 hover:bg-neutral-800 hover:text-white"
               }`}
             >
               {t(labelKey)}
@@ -139,7 +139,7 @@ export default function Navbar() {
             href="#contato"
             onClick={() => setIsOpen(false)}
             data-i18n="nav.bookSession"
-            className="mt-3 block w-full rounded-lg border border-primary/20 bg-primary-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+            className="mt-3 block w-full rounded-lg border border-accent/50 bg-accent px-4 py-2.5 text-center text-sm font-semibold text-neutral-900 transition-colors hover:bg-accent/90"
           >
             {t("bookSession")}
           </Link>

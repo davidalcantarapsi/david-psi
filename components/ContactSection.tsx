@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { Mail } from "lucide-react";
-import { useTranslation } from "./LocaleProvider";
+import { useLocale, useTranslation } from "./LocaleProvider";
 
-const CONTACT_EMAIL = "contato@david-psicologo.com";
-const CONTACT_WHATSAPP = "5511999999999";
+const CONTACT_EMAIL = "david.gealcantara@gmail.com";
+const CONTACT_WHATSAPP = "5527996062965";
 
 type ContactSectionProps = {
   variant?: "default" | "blog";
@@ -14,6 +14,7 @@ type ContactSectionProps = {
 export default function ContactSection({
   variant = "default",
 }: ContactSectionProps) {
+  const { locale } = useLocale();
   const { t, attr } = useTranslation("contact");
   const isBlog = variant === "blog";
   const titleKey = isBlog ? "blogTitle" : "title";
@@ -31,13 +32,15 @@ export default function ContactSection({
         <h2 {...attr(titleKey)} className="text-3xl font-bold md:text-4xl">{t(titleKey)}</h2>
         <p {...attr(descKey)} className="mx-auto mt-4 max-w-3xl text-lg text-primary-100">{t(descKey)}</p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent bg-white px-8 py-3 font-semibold text-primary-500 transition-colors hover:bg-accent-50"
-          >
-            <Mail className="h-5 w-5" />
-            <span {...attr("email")}>{t("email")}</span>
-          </a>
+          {locale === "en" && (
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-accent bg-white px-8 py-3 font-semibold text-primary-500 transition-colors hover:bg-accent-50"
+            >
+              <Mail className="h-5 w-5" />
+              <span {...attr("email")}>{t("email")}</span>
+            </a>
+          )}
           <a
             href={`https://wa.me/${CONTACT_WHATSAPP}`}
             target="_blank"
