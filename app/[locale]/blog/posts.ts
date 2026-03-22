@@ -27,6 +27,19 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
       content:
         "Cuidar da **saúde mental** é tão importante quanto cuidar da saúde física. Reservar momentos para si mesmo, buscar apoio profissional quando necessário e manter hábitos saudáveis são passos essenciais para uma vida equilibrada.",
     },
+    {
+      id: 2,
+      title: "Saúde mental e bem-estar",
+      excerpt:
+        "Reflexões sobre a importância de cuidar da saúde mental no dia a dia.",
+      date: "15 de Fevereiro de 2026",
+      author: "David",
+      image: "https://i.imgur.com/CsIk86U.jpeg",
+      category: "Bem-estar",
+      slug: "saude-mental-bem-estar",
+      content:
+        "Cuidar da **saúde mental** é tão importante quanto cuidar da saúde física. Reservar momentos para si mesmo, buscar apoio profissional quando necessário e manter hábitos saudáveis são passos essenciais para uma vida equilibrada.",
+    },
   ],
   en: [
     {
