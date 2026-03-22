@@ -21,7 +21,7 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
         "Reflexões sobre a importância de cuidar da saúde mental no dia a dia.",
       date: "15 de Fevereiro de 2026",
       author: "David",
-      image: "https://i.imgur.com/CsIk86U.jpeg",
+      image: "/foto-capa.jpg",
       category: "Bem-estar",
       slug: "saude-mental-bem-estar",
       content:
