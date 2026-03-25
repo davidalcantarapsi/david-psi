@@ -66,46 +66,50 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
   category: "Mental Health",
   slug: "online-therapy-does-it-work",
   content:
-  '# Online Therapy: Does It Really Work?
+ `
+<h1>Online Therapy: Does It Really Work?</h1>
 
-Online therapy has rapidly become one of the most searched mental health services worldwide. But an important question remains: does it actually work?
+<p>Online therapy has rapidly become one of the most searched mental health services worldwide. But an important question remains: does it actually work?</p>
 
-The short answer is yes — **when done properly and with the right professional**.
+<p>The short answer is yes — <strong>when done properly and with the right professional</strong>.</p>
 
-## What Makes Online Therapy Effective?
+<h2>What Makes Online Therapy Effective?</h2>
 
-Research in clinical psychology shows that structured, evidence-based approaches — such as Cognitive Behavioral Therapy (CBT) — maintain their effectiveness in online formats.
+<p>Research in clinical psychology shows that structured, evidence-based approaches — such as Cognitive Behavioral Therapy (CBT) — maintain their effectiveness in online formats.</p>
 
-However, effectiveness depends on three main factors:
+<p>However, effectiveness depends on three main factors:</p>
 
-- A clear treatment plan
-- Measurable goals
-- A therapist trained in evidence-based interventions
+<ul>
+  <li>A clear treatment plan</li>
+  <li>Measurable goals</li>
+  <li>A therapist trained in evidence-based interventions</li>
+</ul>
 
-Without these, therapy — online or in-person — often becomes vague and less effective.
+<p>Without these, therapy — online or in-person — often becomes vague and less effective.</p>
 
-## Who Benefits Most from Online Therapy?
+<h2>Who Benefits Most from Online Therapy?</h2>
 
-Online therapy tends to work particularly well for:
+<ul>
+  <li>Professionals with busy schedules</li>
+  <li>People living abroad</li>
+  <li>Individuals who prefer privacy and discretion</li>
+  <li>Clients who value structured, goal-oriented work</li>
+</ul>
 
-- Professionals with busy schedules
-- People living abroad
-- Individuals who prefer privacy and discretion
-- Clients who value structured, goal-oriented work
+<h2>What to Look for in an Online Therapist</h2>
 
-## What to Look for in an Online Therapist
+<ul>
+  <li>Evidence-based methods</li>
+  <li>Clear treatment structure</li>
+  <li>Progress tracking</li>
+  <li>Professional communication</li>
+</ul>
 
-Not all therapists offer the same level of quality. When choosing, prioritize:
+<h2>Final Thought</h2>
 
-- Evidence-based methods
-- Clear treatment structure
-- Progress tracking
-- Professional communication
-
-## Final Thought
-
-Online therapy is not a "lighter" version of therapy. When done correctly, it is a **precise, efficient, and highly effective intervention**.
-`, },
+<p>Online therapy is not a "lighter" version of therapy. When done correctly, it is a <strong>precise, efficient, and highly effective intervention</strong>.</p>
+`,
+    },
   ],
 };
 
