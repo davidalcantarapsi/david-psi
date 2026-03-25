@@ -55,6 +55,19 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
       content:
         "Taking care of your **mental health** is just as important as taking care of your physical health. Setting aside time for yourself, seeking professional support when needed, and maintaining healthy habits are essential steps toward a balanced life.",
     },
+    {
+     id: 2,
+  title: "Online Therapy: Does It Really Work?",
+  excerpt:
+    "Understand how online therapy works, who it is for, and what makes it truly effective.",
+  date: "March 25, 2026",
+  author: "David",
+  image: "/foto-capa.jpg",
+  category: "Mental Health",
+  slug: "online-therapy-does-it-work",
+  content:
+    "# Online Therapy: Does It Really Work?\n\nOnline therapy has rapidly become one of the most searched mental health services worldwide. But an important question remains: does it actually work?\n\nThe short answer is yes, **when done properly and with the right professional**.\n\n## What Makes Online Therapy Effective?\n\nResearch in clinical psychology shows that structured, evidence-based approaches, such as Cognitive Behavioral Therapy (CBT), maintain their effectiveness in online formats.\n\nHowever, effectiveness depends on three main factors:\n\n- A clear treatment plan  \n- Measurable goals  \n- A therapist trained in evidence-based interventions  \n\nWithout these, therapy — online or in-person — often becomes vague and less effective.\n\n## Who Benefits Most from Online Therapy?\n\nOnline therapy tends to work particularly well for:\n\n- Professionals with busy schedules  \n- People living abroad  \n- Individuals who prefer privacy and discretion  \n- Clients who value structured, goal-oriented work  \n\n## What to Look for in an Online Therapist\n\nNot all therapists offer the same level of quality. When choosing, prioritize:\n\n- Evidence-based methods  \n- Clear treatment structure  \n- Progress tracking  \n- Professional communication  \n\n## Final Thought\n\nOnline therapy is not a \"lighter\" version of therapy. When done correctly, it is a **precise, efficient, and highly effective intervention**.",
+    },
   ],
 };
 
