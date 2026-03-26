@@ -66,50 +66,8 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
   category: "Mental Health",
   slug: "online-therapy-does-it-work",
   content:
- `
-<h1>Online Therapy: Does It Really Work?</h1>
-
-<p>Online therapy has rapidly become one of the most searched mental health services worldwide. But an important question remains: does it actually work?</p>
-
-<p>The short answer is yes — <strong>when done properly and with the right professional</strong>.</p>
-
-<h2>What Makes Online Therapy Effective?</h2>
-
-<p>Research in clinical psychology shows that structured, evidence-based approaches — such as Cognitive Behavioral Therapy (CBT) — maintain their effectiveness in online formats.</p>
-
-<p>However, effectiveness depends on three main factors:</p>
-
-<ul>
-  <li>A clear treatment plan</li>
-  <li>Measurable goals</li>
-  <li>A therapist trained in evidence-based interventions</li>
-</ul>
-
-<p>Without these, therapy — online or in-person — often becomes vague and less effective.</p>
-
-<h2>Who Benefits Most from Online Therapy?</h2>
-
-<ul>
-  <li>Professionals with busy schedules</li>
-  <li>People living abroad</li>
-  <li>Individuals who prefer privacy and discretion</li>
-  <li>Clients who value structured, goal-oriented work</li>
-</ul>
-
-<h2>What to Look for in an Online Therapist</h2>
-
-<ul>
-  <li>Evidence-based methods</li>
-  <li>Clear treatment structure</li>
-  <li>Progress tracking</li>
-  <li>Professional communication</li>
-</ul>
-
-<h2>Final Thought</h2>
-
-<p>Online therapy is not a "lighter" version of therapy. When done correctly, it is a <strong>precise, efficient, and highly effective intervention</strong>.</p>
-`,
-    },
+ "# H1**Online Therapy: Does It Really Work?**\n\nOnline therapy has rapidly become one of the most searched mental health services worldwide. But an important question remains: does it actually work?\n\nThe short answer is **yes**, when done properly and with the right professional.\n\n# H2 **WHAT MAKES ONLINE THERAPY EFFECTIVE?**\n\nResearch in clinical psychology shows that structured, evidence-based approaches, such as *Cognitive Behavioral Therapy (CBT)*, maintain their effectiveness in online formats.\n\n# H3 **Effectiveness depends on three main factors**:\n\n**1.** A clear treatment plan\n**2.** Measurable goals\n**3.** A therapist trained in evidence-based interventions\n\nWithout these, therapy, online or in-person, often becomes **vague and less effective**.\n\n# H2 **WHO BENEFITS MOST FROM ONLINE THERAPY?**\n\n- Professionals with busy schedules\n- People living abroad\n- Individuals who prefer privacy and discretion\n- Clients who value structured, goal-oriented work\n\n# H3 **WHAT TO LOOK FOR IN AN ONLINE THERAPIST?**\n\n- Evidence-based methods\n- Clear treatment structure\n- Progress tracking\n- Professional communication\n\nFINAL THOUGHT\n\nOnline therapy is not a \"lighter\" version of therapy. When done correctly, it is a precise, efficient, and highly effective intervention."
+   , },
   ],
 };
 
