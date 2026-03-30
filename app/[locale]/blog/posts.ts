@@ -62,7 +62,7 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
         "Understand how online therapy works, who it is for, and what makes it truly effective.",
       date: "March 25, 2026",
       author: "David",
-      image: "/foto-capa.jpg",
+      image: "/OnlineTherapy.jpeg",
       category: "Mental Health",
       slug: "online-therapy-does-it-work",
       content: `# Online Therapy: Does It Really Work?
