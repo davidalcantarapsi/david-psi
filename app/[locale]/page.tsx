@@ -128,7 +128,7 @@ export default async function HomePage({ params }: Props) {
             <div className="space-y-4 md:col-span-5">
               <h2 data-i18n="therapy.title" className="text-3xl font-bold text-foreground md:text-4xl">{tTherapy("title")}</h2>
               <p data-i18n="therapy.description" className="text-lg leading-relaxed text-neutral-700">{tTherapy("description")}</p>
-              <p data-i18n="therapy.forWho1" className="text-neutral-700">{tTherapy("forWho1")}</p>
+              <p data-i18n="home.therapySummary" className="text-neutral-700">{t("therapySummary")}</p>
               <Link
                 href={`/${locale}/therapy`}
                 className="inline-flex items-center gap-2 font-semibold text-primary-500 transition-colors hover:text-primary-600"
