@@ -3,7 +3,7 @@ import { locales, type Locale } from "@/lib/server-i18n";
 import { getPosts } from "@/app/[locale]/blog/posts";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://david-psychologist.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://davidalcantara.com.br";
 
 const staticPaths = [
   { path: "", priority: 1 as const, changeFrequency: "weekly" as const },
@@ -23,10 +23,17 @@ const staticPaths = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [];
+  const seen = new Set<string>();
+
+  const addUrl = (entry: MetadataRoute.Sitemap[number]) => {
+    if (seen.has(entry.url)) return;
+    seen.add(entry.url);
+    urls.push(entry);
+  };
 
   for (const locale of locales) {
     for (const { path, priority, changeFrequency } of staticPaths) {
-      urls.push({
+      addUrl({
         url: `${siteUrl}/${locale}${path}`,
         lastModified: new Date(),
         changeFrequency,
@@ -35,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     for (const post of getPosts(locale as Locale)) {
-      urls.push({
+      addUrl({
         url: `${siteUrl}/${locale}/blog/${post.slug}`,
         lastModified: new Date(),
         changeFrequency: "monthly",

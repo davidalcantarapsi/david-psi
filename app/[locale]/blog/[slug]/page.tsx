@@ -14,7 +14,7 @@ type Props = {
 };
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://david-psychologist.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://davidalcantara.com.br";
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
