@@ -16,16 +16,169 @@ const postsByLocale: Record<Locale, BlogPost[]> = {
   pt: [
     {
       id: 1,
-      title: "Saúde mental e bem-estar",
+      title: "O que é terapia? Tipos, como funciona e quando procurar",
       excerpt:
-        "Reflexões sobre a importância de cuidar da saúde mental no dia a dia.",
-      date: "15 de Fevereiro de 2026",
+        "Entenda o que é terapia, como funciona a terapia cognitivo-comportamental (TCC), tipos de terapia e quando procurar um psicólogo.",
+      date: "4 de Abril de 2026",
       author: "David",
-      image: "/foto-3.jpg",
-      category: "Bem-estar",
-      slug: "saude-mental-bem-estar",
+      image: "/OnlineTherapy.jpeg",
+      category: "Terapia",
+      slug: "o-que-e-tweapia",
       content:
-        "Cuidar da **saúde mental** é tão importante quanto cuidar da saúde física. Reservar momentos para si mesmo, buscar apoio profissional quando necessário e manter hábitos saudáveis são passos essenciais para uma vida equilibrada.",
+       ` ## O que é terapia?
+
+A terapia psicológica é um processo estruturado, conduzido por um psicólogo, com o objetivo de te ajudar a lidar melhor com pensamentos, emoções e comportamentos.
+
+Diferente do que muitos pensam, terapia não é apenas “conversar sobre problemas”. É um processo baseado em métodos científicos, com metas claras e acompanhamento de progresso ao longo do tempo.
+
+Se você já tentou “resolver sozinho” e sentiu que está girando em círculos, a terapia pode ser exatamente o que está faltando para avançar com mais clareza.
+
+---
+
+## Como funciona uma sessão de terapia?
+
+Uma **sessão de terapia** geralmente dura entre 45 e 60 minutos e segue uma estrutura, especialmente em abordagens com uma boa base científica.
+
+Na prática, você não chega para “falar aleatoriamente”. Existe um direcionamento claro.
+
+Durante o processo, normalmente trabalhamos com:
+
+- Identificação de problemas e objetivos  
+- Análise de padrões de pensamento e comportamento  
+- Aplicação de técnicas específicas  
+- Avaliação de progresso ao longo do tempo  
+
+Ou seja, **terapia eficaz** não é improviso, ela é planejada.
+
+---
+
+## Tipos de terapia psicológica
+
+Existem diferentes abordagens terapêuticas, mas nem todas possuem o mesmo nível de evidência científica.
+
+Por isso, mais importante do que o nome da terapia é entender como ela funciona na prática.
+
+---
+
+### Terapia Cognitivo-Comportamental (TCC)
+
+A **Terapia Cognitivo-Comportamental (TCC)** é uma das abordagens mais estudadas e eficazes para muitas condições atualmente.
+
+Ela parte de um princípio simples:
+
+- Pensamentos influenciam emoções  
+- Emoções influenciam comportamentos  
+- Mudanças nesses padrões podem melhorar sua qualidade de vida  
+
+Na prática, isso significa trabalhar de forma direta em padrões que estão te mantendo travado.
+
+A TCC atualmente é a melhor abordagem para:
+
+- Ansiedade  
+- Depressão  
+- Transtorno obsessivo-compulsivo (TOC)  
+- Fobias  
+
+👉 **Se você busca um processo mais objetivo, com técnicas claras e acompanhamento de evolução, a TCC costuma ser uma excelente escolha.**
+
+---
+
+### Terapias comportamental
+
+A terapia comportamental foca diretamente no que você faz no dia a dia e em como o ambiente influencia seu comportamento.
+
+Ela é especialmente útil para:
+
+- Mudança de hábitos  
+- Controle de impulsos  
+- Desenvolvimento de habilidades  
+
+Aqui, o foco é menos “entender” e mais **mudar padrões na prática**.
+
+---
+
+### Outros tipos de terapia que tem bons resultados
+
+Outras abordagens que tem um bom nível de evidências quando aplicadas sozinhas ou combinadas com a TCC são:
+
+- Ativação Comportamental  
+- Terapia Comportamental Dialética
+- Terapia de Aceitação e Compromisso
+- Entrevista Motivacional
+- Terapia do Esquema
+
+Nem todas essas abordagens funcionam para qualquer caso, por isso vale a pena avaliar com cuidado antes de iniciar. Um bom psicólogo deve ter domínio sobre essas abordagens, além da TCC.
+
+---
+
+## Terapia online funciona?
+
+Sim, a **terapia online** tem evidência científica robusta mostrando que pode ser tão eficaz quanto a presencial, especialmente em abordagens estruturadas como a TCC.
+
+Além disso, ela traz algumas vantagens importantes:
+
+- Mais comodidade no dia a dia  
+- Acesso a profissionais qualificados, independentemente da cidade  
+- Facilidade para manter consistência no tratamento
+- Maior discrição em qualquer lugar
+
+👉 [**Se a rotina é corrida ou você valoriza praticidade, a terapia online pode ser a melhor opção para começar.**](wa.me/5527996062965)
+
+---
+
+## Quando procurar terapia?
+
+Você não precisa estar em crise para buscar terapia.
+
+Na verdade, muitas pessoas começam quando percebem que poderiam estar vivendo melhor do que estão hoje.
+
+Alguns sinais comuns incluem:
+
+- Dificuldade em lidar com emoções  
+- Ansiedade frequente  
+- Desmotivação ou tristeza persistente  
+- Problemas nos relacionamentos  
+- Sensação de estar “travado” na vida  
+
+Se você se identificou com algum desses pontos, isso já é um bom indicativo de que vale a pena olhar com mais atenção.
+
+---
+
+## Mito ou verdade: terapia é para a vida toda?
+
+**Mito.**
+
+A terapia é uma intervenção com objetivos definidos. Em muitos casos, ela pode ser breve e focada em resolver problemas específicos.
+
+O objetivo não é te tornar dependente, é te ajudar a ganhar autonomia. 
+
+Sempre digo para os meus clientes que um dos objetivos da terapia é que **"Você se torne seu próprio terapeuta"**
+
+---
+
+## Conclusão
+
+A terapia pode ser uma ferramenta extremamente eficaz, desde que bem conduzida e baseada em evidências.
+
+Mais do que “se abrir”, é um processo ativo de mudança.
+
+Se você busca mais clareza, direção e resultados concretos, escolher o profissional certo faz toda a diferença.
+
+👉 [**Se você quer iniciar um processo terapêutico estruturado e baseado em evidências, entre em contato para saber como funciona o atendimento.**](wa.me/5527996062965)
+
+---
+
+## Perguntas frequentes (FAQ)
+
+### Terapia funciona para todos?
+
+Funciona para a maioria das pessoas, desde que haja engajamento e um método adequado.
+
+---
+
+### Qual a melhor abordagem terapêutica?
+Atualmente, abordagens baseadas em evidências, como a TCC, têm maior suporte científico para a maior parte das demandas, mas terapias como a Ativação Comportamental ou a DBT podem ser as melhores em alguns casos. Isso depende de uma avaliação criteriosa.`
+
     },
     {
       id: 2,
