@@ -325,19 +325,6 @@ Se a ansiedade tem sido frequente ou intensa, buscar ajuda profissional pode faz
   en: [
     {
       id: 1,
-      title: "Mental health and well-being",
-      excerpt:
-        "Reflections on the importance of taking care of mental health in everyday life.",
-      date: "February 15, 2026",
-      author: "David",
-      image: "/foto-capa.jpg",
-      category: "Well-being",
-      slug: "saude-mental-bem-estar",
-      content:
-        "Taking care of your **mental health** is just as important as taking care of your physical health. Setting aside time for yourself, seeking professional support when needed, and maintaining healthy habits are essential steps toward a balanced life.",
-    },
-    {
-      id: 2,
       title: "Online Therapy: Does It Really Work?",
       excerpt:
         "Understand how online therapy works, who it is for, and what makes it truly effective.",
