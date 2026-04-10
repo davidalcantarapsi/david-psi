@@ -7,14 +7,12 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import { getMessages, getT, locales, type Locale } from "@/lib/server-i18n";
+import { buildAlternatesForLocalePaths, buildLocaleUrl } from "@/lib/seo";
 import { getPosts, getPostBySlug } from "../posts";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://davidalcantara.com.br";
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -28,21 +26,31 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
+  const lc = locale as Locale;
   const messages = await getMessages(locale as Locale);
   const tBlog = getT(messages, "blog");
-  const post = getPostBySlug(slug, locale as Locale);
+  const post = getPostBySlug(slug, lc);
   if (!post) return { title: tBlog("notFound") };
+
+  const ptMatch = getPosts("pt").find((p) => p.id === post.id);
+  const enMatch = getPosts("en").find((p) => p.id === post.id);
+  const localePaths = {
+    pt: `/blog/${ptMatch?.slug ?? post.slug}`,
+    en: `/blog/${enMatch?.slug ?? post.slug}`,
+  } as const;
+
   return {
     title: post.title,
     description: post.excerpt,
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `${siteUrl}/${locale}/blog/${post.slug}`,
+      url: buildLocaleUrl(lc, `/blog/${post.slug}`),
       images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
     },
     alternates: {
-      canonical: `${siteUrl}/${locale}/blog/${post.slug}`,
+      canonical: buildLocaleUrl(lc, `/blog/${post.slug}`),
+      ...buildAlternatesForLocalePaths(localePaths),
     },
   };
 }

@@ -1,12 +1,30 @@
 import Image from "next/image";
 import { Award } from "lucide-react";
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import { getMessages, getT, type Locale } from "@/lib/server-i18n";
+import { buildAlternatesForPath, buildLocaleUrl } from "@/lib/seo";
 
 const PRINCIPLES = ["principle1", "principle2", "principle3", "principle4"] as const;
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const lc = locale as Locale;
+  const messages = await getMessages(lc);
+  const tAbout = getT(messages, "about");
+
+  return {
+    title: tAbout("title"),
+    description: tAbout("description"),
+    alternates: {
+      canonical: buildLocaleUrl(lc, "/about"),
+      ...buildAlternatesForPath("/about"),
+    },
+  };
+}
 
 export default async function AboutPage({ params }: Props) {
   const { locale } = await params;

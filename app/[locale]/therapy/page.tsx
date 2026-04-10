@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import { getMessages, getT, type Locale } from "@/lib/server-i18n";
+import { buildAlternatesForPath, buildLocaleUrl } from "@/lib/seo";
 
 const STEPS = [
   { key: "step1", descKey: "step1Desc" },
@@ -13,6 +15,22 @@ const STEPS = [
 ] as const;
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const lc = locale as Locale;
+  const messages = await getMessages(lc);
+  const tTherapy = getT(messages, "therapy");
+
+  return {
+    title: tTherapy("title"),
+    description: tTherapy("description"),
+    alternates: {
+      canonical: buildLocaleUrl(lc, "/therapy"),
+      ...buildAlternatesForPath("/therapy"),
+    },
+  };
+}
 
 export default async function TherapyPage({ params }: Props) {
   const { locale } = await params;

@@ -1,7 +1,9 @@
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import type { Metadata } from "next";
 import { getMessages, getT, type Locale } from "@/lib/server-i18n";
+import { buildAlternatesForPath, buildLocaleUrl } from "@/lib/seo";
 
 const CONTACT_WHATSAPP = "5527996062965";
 
@@ -14,6 +16,22 @@ const FAQ_KEYS = [
 ] as const;
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const lc = locale as Locale;
+  const messages = await getMessages(lc);
+  const tFaq = getT(messages, "faq");
+
+  return {
+    title: tFaq("title"),
+    description: tFaq("description"),
+    alternates: {
+      canonical: buildLocaleUrl(lc, "/faq"),
+      ...buildAlternatesForPath("/faq"),
+    },
+  };
+}
 
 export default async function FaqPage({ params }: Props) {
   const { locale } = await params;

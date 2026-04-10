@@ -1,13 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ContactSection from "@/components/ContactSection";
 import BackgroundPsi from "@/components/BackgroundPsi";
 import { getMessages, getT, type Locale } from "@/lib/server-i18n";
+import { buildAlternatesForPath, buildLocaleUrl } from "@/lib/seo";
 import { getPosts } from "./posts";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const lc = locale as Locale;
+  const messages = await getMessages(lc);
+  const tBlog = getT(messages, "blog");
+
+  return {
+    title: tBlog("title"),
+    description: tBlog("description"),
+    alternates: {
+      canonical: buildLocaleUrl(lc, "/blog"),
+      ...buildAlternatesForPath("/blog"),
+    },
+  };
+}
 
 export default async function BlogPage({ params }: Props) {
   const { locale } = await params;

@@ -1,12 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
+import type { Metadata } from "next";
 import ContactSection from "@/components/ContactSection";
 import BackgroundPsi from "@/components/BackgroundPsi";
 import { getMessages, getT, type Locale } from "@/lib/server-i18n";
+import { buildAlternatesForPath, buildLocaleUrl } from "@/lib/seo";
 import { getPosts } from "./blog/posts";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const lc = locale as Locale;
+  const messages = await getMessages(lc);
+  const t = getT(messages, "home");
+
+  return {
+    title: t("welcome"),
+    description: t("headline"),
+    alternates: {
+      canonical: buildLocaleUrl(lc, ""),
+      ...buildAlternatesForPath(""),
+    },
+  };
+}
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
