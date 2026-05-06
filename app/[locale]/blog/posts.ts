@@ -482,15 +482,17 @@ At its best, it is a precise, evidence-based intervention designed to help you *
 If approached correctly, it’s not about endless sessions — it’s about meaningful progress.`
 },
     {
-id: 3,  
-title: "Insomnia: Why You Can’t Sleep and What Actually Helps"  ,
-excerpt: "Struggling with insomnia? Learn what causes sleep problems, how insomnia affects your mind, and what actually works to fix it.",  
-date: "May 6, 2026",  
-author: "David",  
-image: "insomnia-therapy.jpeg",  
-
-content: `# Insomnia: Why You Can’t Sleep and What Actually Helps
-
+ id: 3,
+  title: "Insomnia: Why You Can’t Sleep and What Actually Helps" ,
+  excerpt:
+    "Struggling with insomnia? Learn what causes sleep problems, how insomnia affects your mind, and what actually works to fix it.",
+  date: "May 6, 2026",
+  author: "David",
+  image: "/insomnia-therapy.jpeg",
+  category: "Mental Health",
+  slug: "insomnia-cant-sleep",
+  content: `# Insomnia: Why You Can’t Sleep and What Actually Helps
+  
 Insomnia is one of the most common mental health complaints worldwide, yet it is also one of the most misunderstood. People often assume that insomnia is simply about not feeling tired or having too much on their mind. The reality is more complex.
 
 If you are searching for answers about insomnia symptoms, insomnia treatment, or how to fall asleep faster, what you need is not just more sleep tips. You need to understand the mechanisms that keep insomnia going.
