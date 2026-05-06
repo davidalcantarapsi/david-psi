@@ -481,6 +481,88 @@ At its best, it is a precise, evidence-based intervention designed to help you *
 
 If approached correctly, it’s not about endless sessions — it’s about meaningful progress.`
 },
+    {
+id: 3,  
+title: "Insomnia: Why You Can’t Sleep and What Actually Helps"  ,
+excerpt: "Struggling with insomnia? Learn what causes sleep problems, how insomnia affects your mind, and what actually works to fix it.",  
+date: "May 6, 2026",  
+author: "David",  
+image: "insomnia-therapy.jpeg",  
+
+content: `# Insomnia: Why You Can’t Sleep and What Actually Helps
+
+Insomnia is one of the most common mental health complaints worldwide, yet it is also one of the most misunderstood. People often assume that insomnia is simply about not feeling tired or having too much on their mind. The reality is more complex.
+
+If you are searching for answers about insomnia symptoms, insomnia treatment, or how to fall asleep faster, what you need is not just more sleep tips. You need to understand the mechanisms that keep insomnia going.
+
+## What is insomnia
+
+Insomnia is not just a bad night of sleep. It is a persistent difficulty falling asleep, staying asleep, or waking up earlier than desired, combined with daytime impairment.
+
+This means that even if you spend enough hours in bed, your sleep may still feel unrefreshing. Over time, insomnia can affect concentration, mood, decision making, and emotional regulation.
+
+Many people who struggle with chronic insomnia also develop anxiety about sleep itself. This is where the problem becomes self sustaining.
+
+## Why insomnia happens
+
+Insomnia is often driven by a combination of biological, psychological, and behavioral factors.
+
+Stress is one of the most common triggers. When your brain perceives a threat, it activates arousal systems designed to keep you alert. This response is useful in dangerous situations, but not when you are trying to sleep.
+
+Over time, your brain can start associating your bed with wakefulness, frustration, or overthinking. This creates a conditioned response where simply lying down triggers alertness instead of relaxation.
+
+This is why people with insomnia often say things like “I feel sleepy on the couch but fully awake in bed.”
+
+## The role of anxiety in insomnia
+
+Sleep anxiety is a key factor in chronic insomnia. The more you try to force sleep, the more your brain stays alert.
+
+Thoughts like “I need to sleep now or tomorrow will be a disaster” increase physiological arousal. Your heart rate may rise, your muscles tense, and your mind becomes more active.
+
+This creates a paradox. The effort to sleep becomes the very thing that prevents sleep.
+
+Understanding this mechanism is essential if you are looking for effective insomnia treatment.
+
+## Why common sleep tips don’t always work
+
+If you have searched for how to cure insomnia, you have probably come across advice like avoiding screens, drinking herbal tea, or using relaxing music.
+
+While these strategies can help in mild cases, they often fail in chronic insomnia because they do not address the underlying conditioning and cognitive patterns.
+
+Insomnia is not just a habit problem. It is a learned pattern involving your nervous system and your expectations about sleep.
+
+## Evidence based treatment for insomnia
+
+The most effective treatment for chronic insomnia is Cognitive Behavioral Therapy for Insomnia, often called CBT I.
+
+This approach focuses on changing both behavior and thought patterns that maintain insomnia. It helps retrain your brain to associate bed with sleep again, while also reducing the anxiety that interferes with rest.
+
+CBT I includes strategies that may feel counterintuitive at first. For example, spending less time in bed can actually improve sleep efficiency. This works by strengthening the association between bed and sleep.
+
+It also targets dysfunctional beliefs like “I must get eight hours of sleep no matter what” which can increase pressure and worsen insomnia.
+
+## How to start improving your sleep
+
+Improving insomnia requires a shift in how you relate to sleep. Instead of trying to control it directly, the goal is to create conditions where sleep can happen naturally.
+
+This involves reducing cognitive arousal, stabilizing your sleep schedule, and breaking the cycle of frustration linked to bedtime.
+
+It also means accepting that occasional poor sleep is normal. Ironically, this acceptance reduces the pressure that keeps insomnia alive.
+
+## When to seek help
+
+If your insomnia lasts for weeks or months and starts affecting your daily functioning, it is important to seek professional help.
+
+Online therapy for insomnia has become increasingly effective and accessible. With the right approach, most people see significant improvement without relying on medication.
+
+## Final thoughts
+
+Insomnia is not just about sleep. It is about how your brain has learned to stay awake at the wrong time.
+
+Once you understand that, the solution becomes clearer. You are not trying to force sleep. You are retraining a system that has become overly alert.
+
+That shift changes everything.`
+    },
   ],
 };
 
