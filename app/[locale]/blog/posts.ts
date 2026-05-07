@@ -651,7 +651,7 @@ Panic attacks feel like loss of control, but they follow a very specific pattern
 
 Once you understand that pattern, the experience changes. The sensations may still occur, but they stop being interpreted as a threat. That shift is what allows control to return.
 
-Panic are learned. And because of that, it can also be unlearned.`
+Panic is learned. And because of that, it can also be unlearned.`
     },
   ],
 };
