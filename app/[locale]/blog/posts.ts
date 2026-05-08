@@ -654,7 +654,7 @@ Once you understand that pattern, the experience changes. The sensations may sti
 Panic is learned. And because of that, it can also be unlearned.`
     },
     {
-id: 4,
+id: 5,
 title: "OCD: What It Really Is, Symptoms, and Evidence-Based Treatment",
 excerpt: "Learn what OCD really is, common OCD symptoms, and what treatment actually works.",
 date: "May 8, 2026",
