@@ -659,7 +659,7 @@ title: "OCD: What It Really Is, Symptoms, and Evidence-Based Treatment",
 excerpt: "Learn what OCD really is, common OCD symptoms, and what treatment actually works.",
 date: "May 8, 2026",
 author: "David",
-image: "/ocd-therapy.jpeg",
+image: "/ocd-therapy.jpeg.png",
 category: "Mental Health",
 slug: "ocd-what-it-is-symptoms-treatment",
 content: 
