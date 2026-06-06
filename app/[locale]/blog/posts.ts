@@ -886,6 +886,76 @@ Understanding this cycle is the first step toward breaking it.
 
 If you have been struggling with OCD symptoms, it is possible to change how your mind responds. With the right guidance, the patterns that feel automatic today can become flexible again.`
     },
+    {
+id: 7,
+title: "Anxiety: What is it and how does it affect your life",
+excerpt: "Learn what Anxiety really is, and what treatment actually works.",
+date: "June 6, 2026",
+author: "David",
+image: "/Anxiety-whatis.png",
+category: "Mental Health",
+slug: "what-is-anxiety",
+content: `
+  # Anxiety Symptoms: What They Really Mean and When to Take Them Seriously
+
+Anxiety symptoms are among the most searched mental health topics today, and for a good reason. If you have ever wondered what is anxiety, why your body reacts so intensely, or whether your experience is normal, you are not alone.
+
+Anxiety is a full body response that involves your brain, your physiology, and your behavior. In many cases, what people call anxiety symptoms are actually signs of a system that is trying to protect you, even when there is no real danger present.
+
+## What is anxiety
+
+When people search for what is anxiety, they are often trying to understand why they feel constantly on edge. Anxiety is a state of anticipation that happens when your brain is trying to predict and prepare for future threats, even when those threats are unlikely or unclear.
+
+In my clinical practice, I often explain that anxiety is not the problem itself. The problem is when this system becomes overactive, firing too often, too intensely, or in situations where it is not useful.
+
+## Anxiety symptoms and how they show up
+
+Anxiety symptoms can affect your body, your thoughts, and your actions in a very real way. Many people initially think they are experiencing a physical illness because the symptoms feel so intense. It's very common to hear stories of patients that went to a hospital thinking they were having a heart attack when, in reality, it was a high level of anxiety.
+
+You might notice your heart racing without a clear reason, your breathing may feel shallow or restricted. Some people describe a constant tension in their muscles, while others feel dizzy or disconnected from reality.
+
+On a cognitive level, anxiety symptoms often include persistent worry, difficulty concentrating, and intrusive thoughts that feel hard to control. It is common to imagine worst case scenarios and feel like something bad is about to happen.
+
+Behaviorally, anxiety can lead to avoidance. You may start avoiding situations that trigger discomfort, which can reduce anxiety in the short term but maintain it in the long term.
+
+## Anxiety vs anxiety disorder
+
+Not all anxiety is a disorder. This distinction is critical, specially because, ideally, a healthy anxiety should protect you.
+
+Anxiety becomes a disorder when it starts interfering with your daily life. This can include difficulty working, maintaining relationships, or even completing simple tasks. The intensity and frequency of symptoms matter more than the presence of anxiety itself. Also, it's common that, in a long term, axiety can lead to other types of suffering, such as depression, alcohool and drug abuse and other mental disorders.
+
+I often tell my patients that the question is not whether you feel anxious, but how much it is limiting your life.
+
+## Why anxiety symptoms feel so real
+
+One of the most confusing aspects of anxiety symptoms is how physical they are. This happens because anxiety activates your nervous system, especially the fight or flight response.
+
+Your body prepares for danger by increasing heart rate, redirecting blood flow, and sharpening attention. These changes are adaptive in real danger, but when triggered unnecessarily, they can feel overwhelming.
+
+Understanding this mechanism is often a turning point. When you realize that your symptoms are not dangerous, even if they are uncomfortable, your relationship with anxiety begins to change.
+
+## Anxiety and depression connection
+
+Anxiety is often related to depression, and this is not accidental. These conditions frequently occur together.
+
+Chronic anxiety can lead to exhaustion, reduced motivation, and feelings of hopelessness. On the other hand, depression can increase rumination and sensitivity to stress, which feeds anxiety.
+
+This interaction is important because treating one often improves the other, especially when using evidence based approaches.
+
+## When to seek help for anxiety symptoms
+
+If you are constantly searching for anxiety symptoms, it may already be a sign that something needs attention. Occasional anxiety is part of life, but persistent distress is not something you need to handle alone.
+
+In my work as a therapist, I focus on helping people understand the patterns that maintain anxiety. The goal is not to eliminate anxiety completely, but to reduce its intensity and impact so you can function with more freedom.
+
+## Final thoughts on anxiety symptoms
+
+Anxiety symptoms are not random. They follow patterns that can be understood, measured, and changed.
+
+When you shift from trying to eliminate anxiety to understanding how it works, you gain a different kind of control. That is where real progress starts.
+
+If you have been dealing with persistent anxiety, it may be time to look beyond quick fixes and focus on structured, therapy can actually address the root of the problem.`
+    },
   ],
 };
 
