@@ -122,7 +122,7 @@ export default async function HomePage({ params }: Props) {
             <div className="overflow-hidden rounded-2xl border border-primary/20 md:col-span-2">
               <div className="relative h-[300px] min-h-[300px] w-full md:h-[550px] md:min-h-[550px]">
                 <Image
-                  src="/foto-3.jpg"
+                  src="/foto-cafe.png"
                   alt={t("aboutImageAlt")}
                   fill
                   className="object-cover image-sobre-mim"
