@@ -181,7 +181,7 @@ Atualmente, abordagens baseadas em evidências, como a TCC, têm maior suporte c
 
     },
     {
-      id: 2,
+      id: 3,
       title: "Ansiedade: o que é, sintomas e como lidar com crises",
       excerpt:
         "Entenda o que é ansiedade, principais sintomas e o que fazer durante uma crise",
@@ -322,7 +322,7 @@ Se a ansiedade tem sido frequente ou intensa, buscar ajuda profissional pode faz
 ,
     },
     {
-      id: 3,
+      id: 4,
       title: "Psicoterapia: o que é, como funciona e quando faz sentido procurar",
       excerpt:
         "Entenda o que é a psicoterapia em si, como ela funciona e se ela pode te ajudar.",
@@ -388,7 +388,7 @@ Quando existe clareza sobre o que está sendo feito e por quê, o processo se to
 Se você tem alguma dúvida sobre o processo, sinta-se à vontade para me contatar ou clicar na aba "Terapia".`      
     },
     {
-  id: 4,
+  id: 2,
   title: "Morar no exterior: como lidar com os desafios emocionais da mudança",
   excerpt:
     "Como morar no exterior pode afetar sua saúde mental? Por que a adaptação pode ser difícil e como lidar com a saudade, a ansiedade e o isolamento.",
